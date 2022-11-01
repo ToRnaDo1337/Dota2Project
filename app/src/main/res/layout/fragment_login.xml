@@ -12,7 +12,6 @@
     android:paddingBottom="@dimen/fragment_vertical_margin"
     tools:context=".ui.login.LoginFragment">
 
-
     <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
