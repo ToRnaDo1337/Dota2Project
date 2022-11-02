@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="1"
+        android:contentDescription="@string/todo"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/_719581"
+        tools:visibility="visible" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:background="@drawable/color1"
+        android:paddingLeft="20dp"
+        android:scrollbarThumbHorizontal="@drawable/ic_launcher_background"
+        android:scrollbarThumbVertical="@drawable/ic_launcher_background"
+        android:text="Volume"
+        android:textCursorDrawable="@drawable/color1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <Switch
+        android:id="@+id/switch5"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:background="@drawable/color1"
+        android:paddingLeft="20dp"
+        android:scrollbarThumbHorizontal="@drawable/ic_launcher_background"
+        android:scrollbarThumbVertical="@drawable/ic_launcher_background"
+        android:text="Switch"
+        android:textCursorDrawable="@drawable/color1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <Switch
+        android:id="@+id/switch6"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:background="@drawable/color1"
+        android:paddingLeft="20dp"
+        android:scrollbarThumbHorizontal="@drawable/ic_launcher_background"
+        android:scrollbarThumbVertical="@drawable/ic_launcher_background"
+        android:text="Switch"
+        android:textCursorDrawable="@drawable/color1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
