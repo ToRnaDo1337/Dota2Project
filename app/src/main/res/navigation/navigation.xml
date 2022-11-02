@@ -11,12 +11,27 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_fragment_title2"
-            app:destination="@id/fragment_title2" />
+            android:id="@+id/action_loginFragment_to_mainMenu"
+            app:destination="@id/mainMenu" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_title2"
-        android:name="com.example.dota2.fragment_title"
-        android:label="fragment_title"
-        tools:layout="@layout/fragment_title" />
+        android:id="@+id/mainMenu"
+        android:name="com.example.dota2.MainMenu"
+        android:label="MainMenu" >
+        <action
+            android:id="@+id/action_mainMenu_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.dota2.SettingsFragment"
+        android:label="SettingsFragment" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.dota2.MainActivity"
+        android:label="fragment_mako_question"
+        tools:layout="@layout/fragment_mako_question" />
 </navigation>

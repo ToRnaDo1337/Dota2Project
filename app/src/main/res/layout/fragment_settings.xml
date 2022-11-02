@@ -37,7 +37,8 @@
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="170dp" />
+        tools:layout_editor_absoluteY="170dp"
+        tools:ignore="MissingConstraints" />
 
     <Switch
         android:id="@+id/switch5"
@@ -53,7 +54,8 @@
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="319dp" />
+        tools:layout_editor_absoluteY="319dp"
+        tools:ignore="MissingConstraints" />
 
     <Switch
         android:id="@+id/switch6"
@@ -69,6 +71,7 @@
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="61dp"
-        tools:layout_editor_absoluteY="467dp" />
+        tools:layout_editor_absoluteY="467dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
