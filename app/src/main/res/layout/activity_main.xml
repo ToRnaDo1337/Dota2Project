@@ -14,6 +14,7 @@
     tools:context=".ui.login.LoginFragment">
 
 
+
     <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
@@ -31,6 +32,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <include
+        android:id="@+id/app_bar_main"
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <EditText
         android:id="@+id/username"

@@ -31,7 +31,6 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="23dp"
-        app:label_strokeColor="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
