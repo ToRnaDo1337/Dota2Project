@@ -1,4 +1,4 @@
-package com.example.dota2.aboutDota2
+package com.example.dota2.ui.aboutdota
 
 
 import android.os.Bundle
@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+
 import com.example.dota2.databinding.FragmentAboutBinding
-
-
 
 class AboutFragment : Fragment() {
 
-    private var _binding: FragmentAboutBinding? = null
+        private var _binding: FragmentAboutBinding? = null
+
 
     private val binding get() = _binding!!
 
@@ -24,7 +24,7 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val galleryViewModel =
-            ViewModelProvider(this).get(AboutViewModel::class.java)
+            ViewModelProvider(this).get(AboutFragmentModel::class.java)
 
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root

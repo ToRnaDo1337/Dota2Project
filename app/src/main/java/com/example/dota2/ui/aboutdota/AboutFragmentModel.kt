@@ -1,13 +1,12 @@
-package com.example.dota2.aboutDota2
-
+package com.example.dota2.ui.aboutdota
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class AboutViewModel : ViewModel() {
+class AboutFragmentModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is about Fragment"
+        value = "This is gallery Fragment"
     }
     val text: LiveData<String> = _text
 }

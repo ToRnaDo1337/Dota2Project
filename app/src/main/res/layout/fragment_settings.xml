@@ -38,7 +38,7 @@
         android:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="170dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switch5"
@@ -55,7 +55,7 @@
         android:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="319dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
     <Switch
         android:id="@+id/switch6"
@@ -72,7 +72,7 @@
         android:fontFamily="serif-monospace"
         tools:layout_editor_absoluteX="61dp"
         tools:layout_editor_absoluteY="467dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"

@@ -34,4 +34,8 @@
         android:name="com.example.dota2.MainActivity"
         android:label="fragment_mako_question"
         tools:layout="@layout/fragment_mako_question" />
+    <fragment
+        android:id="@+id/aboutFragment2"
+        android:name="com.example.dota2.ui.aboutdota.AboutFragment"
+        android:label="AboutFragment" />
 </navigation>
