@@ -19,8 +19,9 @@
             android:text="@string/about_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_height="wrap_content"
+
             app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
             tools:ignore="MissingConstraints" />
 
         <androidx.recyclerview.widget.RecyclerView
