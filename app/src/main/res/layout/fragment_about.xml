@@ -15,10 +15,11 @@
         <TextView
             android:id="@+id/rulesText"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+
             android:text="@string/about_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
 
