@@ -1,6 +1,8 @@
 package com.example.dota2.data
 
+import androidx.lifecycle.MutableLiveData
 import com.example.dota2.data.model.LoggedInUser
+import com.example.dota2.ui.login.LoginResult
 import java.io.IOException
 
 /**
@@ -11,7 +13,7 @@ class LoginDataSource {
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
             // TODO: handle loggedInUser authentication
-            val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "Jane Doe")
+            val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "Aibek Mendigara")
             return Result.Success(fakeUser)
         } catch (e: Throwable) {
             return Result.Error(IOException("Error logging in", e))
