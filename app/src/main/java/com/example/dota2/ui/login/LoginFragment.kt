@@ -67,8 +67,8 @@ class LoginFragment : Fragment() {
                     showLoginFailed(it)
                 }
                 loginResult.success?.let {
-                    updateUiWithUser(it)
                     loginSuccess()
+                    updateUiWithUser(it)
                 }
             })
 
@@ -112,7 +112,7 @@ class LoginFragment : Fragment() {
 
 
     }
-    fun loginSuccess() {
+   private fun loginSuccess() {
        binding.login.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(LoginFragmentDirections.actionLoginFragmentToMainMenu())

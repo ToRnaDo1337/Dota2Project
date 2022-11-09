@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation">
     <item
-        android:id="@+id/rulesFragment"
+        android:id="@+id/aboutFragment2"
         android:icon="@drawable/about"
         android:title="@string/about_dota2" />
     <item
-        android:id="@+id/aboutFragment"
+        android:id="@+id/logout"
         android:icon="@drawable/logout"
         android:title="@string/logout" />
 </menu>

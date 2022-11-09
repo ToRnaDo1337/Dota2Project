@@ -5,5 +5,4 @@ package com.example.dota2.ui.login
  */
 data class LoggedInUserView(
     val displayName: String
-
 )
