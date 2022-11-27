@@ -34,6 +34,7 @@ class LoginRepository(val dataSource: LoginDataSource) {
         if (result is Result.Success) {
             setLoggedInUser(result.data)
         }
+        else logout()
 
         return result
     }
