@@ -3,6 +3,7 @@ package com.example.dota2
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -15,6 +16,13 @@ import com.example.dota2.databinding.ActivityMainBinding
 import com.example.dota2.ui.Settings.SettingsActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +36,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.activityMain)
         setSupportActionBar(binding.appBarMain.toolbar)
+
+        val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+        val retrofit: Retrofit = Retrofit.Builder()
+                .baseUrl("https://rickandmortyapi.com/api/")
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
+
+        val rickAndMortyService: RickAndMortyService = retrofit.create(RickAndMortyService::class.java)
+
+        rickAndMortyService.getCharacterById().enqueue(object: Callback<Any>{
+            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                Log.i("MainActivity", response.toString())
+            }
+
+            override fun onFailure(call: Call<Any>, t: Throwable) {
+                Log.i("MainActivity", t.message ?: "Null Message")
+            }
+        })
 
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "This is not working yet!!!:)", Snackbar.LENGTH_LONG)
@@ -71,3 +97,5 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
+
+
