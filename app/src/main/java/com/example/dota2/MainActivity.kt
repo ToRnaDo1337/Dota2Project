@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.activityMain)
-
         setSupportActionBar(binding.appBarMain.toolbar)
 
         binding.appBarMain.fab.setOnClickListener { view ->
@@ -36,12 +35,15 @@ class MainActivity : AppCompatActivity() {
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
+
+
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.aboutFragment2 , R.id.loginFragment
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -57,15 +59,15 @@ class MainActivity : AppCompatActivity() {
             SettingsActivity::class.java);
         when (id) {
             R.id.action_settings -> startActivity(settingsIntent)
+
         }
         return super.onOptionsItemSelected(item) 
     }
 
 
-
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

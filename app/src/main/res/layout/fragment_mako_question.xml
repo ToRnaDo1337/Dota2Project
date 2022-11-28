@@ -1,109 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@color/black"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.example.dota2.InGame">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="141dp"
-        android:layout_height="151dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="120dp"
-        android:background="#000000"
-        android:padding="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/axe" />
+    <data>
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="370dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="340dp"
-        android:background="@drawable/gradiente"
-        android:paddingTop="15dp"
-        android:text="What is the main attribute of Axe?"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="game"
+            type="com.example.dota2.ui.game.GameFragment" />
+    </data>
 
-    <RadioGroup
-        android:layout_width="476dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="-480dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:textStyle="bold"
-            android:fontFamily="serif-monospace"
-            android:background="@drawable/gradiente"
-            android:text="RadioButton"
-            android:textColor="#FFFFFF" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/gradiente"
-            android:fontFamily="serif-monospace"
-            android:minHeight="48dp"
-            android:text="RadioButton"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/radioButton7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/gradiente"
-            android:fontFamily="serif-monospace"
-            android:minHeight="48dp"
-            android:text="RadioButton"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/radioButton8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/gradiente"
-            android:fontFamily="serif-monospace"
-            android:minHeight="48dp"
-            android:text="RadioButton"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-    </RadioGroup>
-
-    <ImageView
-        android:id="@+id/imageView4"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.1"
-        android:contentDescription="@string/todo"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/_719581"
-        tools:visibility="visible" />
+        android:fillViewport="true"
+        android:background="@color/black">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="141dp"
+                android:layout_height="151dp"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="80dp"
+                android:background="#000000"
+                android:padding="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/axe" />
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="370dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="296dp"
+                android:background="@drawable/gradiente"
+                android:paddingTop="15dp"
+                android:text="@{game.currentQuestion.text}"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="23dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Who is this hero?"/>
+
+            <RadioGroup
+                android:id="@+id/questionRadioGroup"
+                android:layout_width="476dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="396dp"
+                android:layout_marginEnd="-480dp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/firstAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/gradiente"
+                    android:fontFamily="serif-monospace"
+                    android:text="@{game.answers[0]}"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    tools:text="Mortra"/>
+
+                <RadioButton
+                    android:id="@+id/secondAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/gradiente"
+                    android:fontFamily="serif-monospace"
+                    android:minHeight="48dp"
+                    android:text="@{game.answers[1]}"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    tools:text="Axe"/>
+
+                <RadioButton
+                    android:id="@+id/thirdAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/gradiente"
+                    android:fontFamily="serif-monospace"
+                    android:minHeight="48dp"
+                    android:text="@{game.answers[2]}"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    tools:text="Who?"/>
+
+                <RadioButton
+                    android:id="@+id/fourthAnswerRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/gradiente"
+                    android:fontFamily="serif-monospace"
+                    android:minHeight="48dp"
+                    android:text="@{game.answers[3]}"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    tools:text="Doom"/>
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="113dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Submit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fourthAnswerRadioButton" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</layout>
