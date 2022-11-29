@@ -22,11 +22,26 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:visibility="visible"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:id="@+id/rv_list"
+            android:layout_width="359dp"
+            android:layout_height="448dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="hideText"
+            android:text="Hide"
+            tools:layout_editor_absoluteX="272dp"
+            tools:layout_editor_absoluteY="811dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
