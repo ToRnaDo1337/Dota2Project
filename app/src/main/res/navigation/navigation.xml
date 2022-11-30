@@ -22,21 +22,51 @@
             android:id="@+id/action_mainMenu_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_mainMenu_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_mainMenu_to_makoQuestion"
+            app:destination="@id/makoQuestion" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.dota2.ui.Settings.SettingsActivity"
         android:label="SettingsFragment" />
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.dota2.MainActivity"
-        android:label="fragment_mako_question"
-        tools:layout="@layout/fragment_mako_question" />
     <fragment
         android:id="@+id/aboutFragment2"
         android:name="com.example.dota2.ui.aboutdota.AboutFragment"
         android:label="AboutFragment"
         android:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/makoQuestion"
+        android:name="com.example.dota2.MakoQuestion"
+        android:label="MakoQuestion" >
+        <action
+            android:id="@+id/action_makoQuestion_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_makoQuestion_to_gameWonFragment"
+            app:destination="@id/gameWonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.example.dota2.ui.game.GameOverFragment"
+        android:label="GameOverFragment" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_makoQuestion"
+            app:destination="@id/makoQuestion" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameWonFragment"
+        android:name="com.example.dota2.ui.game.GameWonFragment"
+        android:label="fragment_game_won"
+        tools:layout="@layout/fragment_game_won" >
+        <action
+            android:id="@+id/action_gameWonFragment_to_gameFragment"
+            app:popUpTo="@+id/titleFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
+    </fragment>
 </navigation>

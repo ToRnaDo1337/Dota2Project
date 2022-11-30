@@ -13,13 +13,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_dota2">About Dota2</string>
+    <string name="title_dota2_question">Dota2 (%1$d/%2$d)</string>
     <string name="logout">Logout</string>
     <string name="about_text">Something</string>
     <string name="action_settings">Settings</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
-
+    <string name="share_success_text">I mastered #UdacityAndroidTrivia with %1$d/%2$d correct questions!</string>
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
