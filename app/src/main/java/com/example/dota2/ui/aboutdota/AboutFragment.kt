@@ -1,6 +1,4 @@
 package com.example.dota2.ui.aboutdota
-
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +7,15 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dota2.adapter.ItemAdapter
+import com.example.dota2.adapter.ListAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dota2.data.Datasource
-
 import com.example.dota2.databinding.FragmentAboutBinding
 
+
 class AboutFragment : Fragment() {
+
+    private var layoutManager: RecyclerView.LayoutManager? = null
     private var _binding: FragmentAboutBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -30,7 +31,7 @@ class AboutFragment : Fragment() {
         val myset = Datasource().loadAffirmations()
         val textView: TextView = binding.rulesText
         val ablist: RecyclerView = binding.recyclerView
-        ablist.adapter=ItemAdapter(this,myset);
+        ablist.adapter=ListAdapter(this,myset);
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

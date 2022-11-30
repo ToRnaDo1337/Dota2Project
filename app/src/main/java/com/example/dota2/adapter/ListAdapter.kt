@@ -9,9 +9,9 @@ import com.example.dota2.R
 import com.example.dota2.data.model.Responsibility
 import com.example.dota2.ui.aboutdota.AboutFragment
 
-class ItemAdapter(private val context: AboutFragment,
+class ListAdapter(private val context: AboutFragment,
                   private val dataset: List<Responsibility>
-) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+) : RecyclerView.Adapter<ListAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
