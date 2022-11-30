@@ -17,33 +17,32 @@
 
         <TextView
             android:id="@+id/rulesText"
-            android:layout_width="0dp"
+            android:layout_width="411dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:text="@string/about_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
+            android:textColor="@color/white"
             android:visibility="visible"
-            />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="8dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list"
             android:layout_width="359dp"
-            android:layout_height="448dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+            android:layout_height="456dp" />
 
 
         <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:layout_marginStart="-80dp"
+            android:layout_marginTop="-1050dp"
             android:onClick="hideText"
             android:text="Hide"
-            tools:layout_editor_absoluteX="272dp"
-            tools:layout_editor_absoluteY="811dp" />
+            app:layout_constraintStart_toEndOf="@+id/rv_list"
+            app:layout_constraintTop_toBottomOf="@+id/rulesText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
