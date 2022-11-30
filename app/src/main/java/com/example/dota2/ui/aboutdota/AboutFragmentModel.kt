@@ -10,6 +10,7 @@ class AboutFragmentModel : ViewModel() {
         value = "2";
 
 
+
     }
     val text: LiveData<String> = _text
 }

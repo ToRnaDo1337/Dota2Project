@@ -17,6 +17,8 @@ class ListAdapter(private val context: AboutFragment,
         val textView: TextView = view.findViewById(R.id.item_title)
 
 
+
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
