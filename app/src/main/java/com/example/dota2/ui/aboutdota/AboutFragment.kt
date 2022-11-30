@@ -30,6 +30,8 @@ class AboutFragment : Fragment() {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
+
         val textView: TextView = binding.rulesText
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it

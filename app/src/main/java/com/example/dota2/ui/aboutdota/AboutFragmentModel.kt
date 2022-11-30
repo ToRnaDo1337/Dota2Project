@@ -8,6 +8,8 @@ class AboutFragmentModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = "1";
         value = "2";
+
+
     }
     val text: LiveData<String> = _text
 }

@@ -11,6 +11,8 @@ class Datasource {
             Responsibility(R.string.affirmation2),
             Responsibility(R.string.affirmation3),
             Responsibility(R.string.affirmation4),
+
+
         )
     }
 }
