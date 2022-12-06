@@ -37,27 +37,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.activityMain)
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
-        val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl("https://rickandmortyapi.com/api/")
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
-
-        val rickAndMortyService: RickAndMortyService = retrofit.create(RickAndMortyService::class.java)
-
-        rickAndMortyService.getCharacterById().enqueue(object: Callback<Any>{
-            override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Log.i("MainActivity", response.toString())
-            }
-
-            override fun onFailure(call: Call<Any>, t: Throwable) {
-                Log.i("MainActivity", t.message ?: "Null Message")
-            }
-        })
 
         binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "This is not working yet!!!:)", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+            val retrofit: Retrofit = Retrofit.Builder()
+                .baseUrl("https://rickandmortyapi.com/api/")
+                .addConverterFactory(MoshiConverterFactory.create(moshi))
+                .build()
+
+            val dota2Presentation: Dota2Presentation = retrofit.create(Dota2Presentation::class.java)
+
+            dota2Presentation.getCharacterById().enqueue(object: Callback<Any>{
+                override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                    Log.i("MainActivity", response.toString())
+                    Snackbar.make(view, "${response.body()}", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show()
+
+                }
+
+                override fun onFailure(call: Call<Any>, t: Throwable) {
+                    Log.i("MainActivity", t.message ?: "Null Message")
+                }
+            })
+
+
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView

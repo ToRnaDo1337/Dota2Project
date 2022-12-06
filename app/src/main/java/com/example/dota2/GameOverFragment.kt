@@ -1,5 +1,5 @@
 
-package com.example.dota2.ui.game
+package com.example.dota2
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.dota2.databinding.FragmentGameOverBinding
-import com.example.dota2.R
 
 class GameOverFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -19,7 +18,7 @@ class GameOverFragment : Fragment() {
                 inflater, R.layout.fragment_game_over, container, false)
 
         binding.tryAgainButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(GameOverFragmentDirections.actionGameOverFragmentToMakoQuestion())
+            view.findNavController().navigate(com.example.dota2.GameOverFragmentDirections.actionGameOverFragmentToMakoQuestion())
         }
         return binding.root
     }
