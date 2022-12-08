@@ -44,6 +44,8 @@
     <string name="d2">Aibek</string>
     <string name="d3">Eldar</string>
     <string name="d4">Nurtugan</string>
+    <string name="play_again">Play again!</string>
+    <string name="main_menu">Main menu</string>
 
 
 </resources>

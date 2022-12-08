@@ -19,7 +19,6 @@ class AboutFragmentModel : ViewModel() {
 
     private val _text = MutableLiveData<List<String>>().apply {
 
-     /*   value = listOf(Responsibility(3).loadAffirmations().toString())*/
     }
 
 
