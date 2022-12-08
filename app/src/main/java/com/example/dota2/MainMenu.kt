@@ -1,5 +1,7 @@
 package com.example.dota2
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,6 +40,10 @@ class MainMenu : Fragment() {
         _binding = FragmentMainMenuBinding.inflate(inflater, container, false)
         binding.play.setOnClickListener { view: View ->
             view.findNavController().navigate(MainMenuDirections.actionMainMenuToMakoQuestion())
+        }
+        binding.imageButton4.setOnClickListener { view ->
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.example.com"))
+            startActivity(i)
         }
         return binding.root
     }

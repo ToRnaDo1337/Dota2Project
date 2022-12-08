@@ -19,16 +19,9 @@
         android:name="com.example.dota2.MainMenu"
         android:label="MainMenu" >
         <action
-            android:id="@+id/action_mainMenu_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-        <action
             android:id="@+id/action_mainMenu_to_makoQuestion"
             app:destination="@id/makoQuestion" />
     </fragment>
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.dota2.ui.Settings.SettingsActivity"
-        android:label="SettingsFragment" />
     <fragment
         android:id="@+id/aboutFragment2"
         android:name="com.example.dota2.ui.aboutdota.AboutFragment"
@@ -47,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameOverFragment"
-        android:name="com.example.dota2.ui.game.GameOverFragment"
+        android:name="com.example.dota2.GameOverFragment"
         android:label="GameOverFragment" >
         <action
             android:id="@+id/action_gameOverFragment_to_makoQuestion"
@@ -55,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameWonFragment"
-        android:name="com.example.dota2.ui.game.GameWonFragment"
+        android:name="com.example.dota2.GameWonFragment"
         android:label="fragment_game_won"
         tools:layout="@layout/fragment_game_won" >
         <action
@@ -69,4 +62,8 @@
             android:name="numCorrect"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.dota2.ui.Settings.SettingsActivity.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
