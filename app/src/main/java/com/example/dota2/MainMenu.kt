@@ -42,7 +42,7 @@ class MainMenu : Fragment() {
             view.findNavController().navigate(MainMenuDirections.actionMainMenuToMakoQuestion())
         }
         binding.imageButton4.setOnClickListener { view ->
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.example.com"))
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://magzhan787.github.io/presentation/"))
             startActivity(i)
         }
         return binding.root
