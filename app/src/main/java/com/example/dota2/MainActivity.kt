@@ -16,7 +16,6 @@ import com.example.dota2.databinding.ActivityMainBinding
 import com.example.dota2.ui.Settings.SettingsActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import com.google.gson.Gson
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -51,16 +50,15 @@ class MainActivity : AppCompatActivity() {
 
             val dota2Presentation: Dota2Presentation = retrofit.create(Dota2Presentation::class.java)
 
-            dota2Presentation.getCharacterById().enqueue(object: Callback<DataModel>{
-                override fun onResponse(call: Call<DataModel>, response: Response<DataModel>) {
+            dota2Presentation.getCharacterById().enqueue(object: Callback<Any>{
+                override fun onResponse(call: Call<Any>, response: Response<Any>) {
                     Log.i("MainActivity", response.toString())
-                    var gson  = Gson()
                     Snackbar.make(view, "${response.body()}", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show()
 
                 }
 
-                override fun onFailure(call: Call<DataModel>, t: Throwable) {
+                override fun onFailure(call: Call<Any>, t: Throwable) {
                     Log.i("MainActivity", t.message ?: "Null Message")
                 }
             })

@@ -20,6 +20,9 @@ class GameOverFragment : Fragment() {
         binding.tryAgainButton.setOnClickListener { view: View ->
             view.findNavController().navigate(com.example.dota2.GameOverFragmentDirections.actionGameOverFragmentToMakoQuestion())
         }
+        binding.mainMenu.setOnClickListener { view: View ->
+            view.findNavController().navigate(com.example.dota2.GameOverFragmentDirections.actionGameOverFragmentToMainMenu())
+        }
         return binding.root
     }
 }

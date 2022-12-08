@@ -6,6 +6,6 @@ import retrofit2.Call
 interface Dota2Presentation {
 
     @GET("api/heroes")
-    fun getCharacterById(): Call<DataModel>
+    fun getCharacterById(): Call<Any>
 
 }

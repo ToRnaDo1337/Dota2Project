@@ -21,6 +21,9 @@ class GameWonFragment : Fragment() {
         binding.nextMatchButton.setOnClickListener { view: View ->
             view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
+        binding.mainMenu.setOnClickListener { view: View ->
+            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToMainMenu())
+        }
         val args = GameWonFragmentArgs.fromBundle(requireArguments())
         Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
 

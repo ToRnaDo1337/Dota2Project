@@ -53,10 +53,6 @@ class AboutFragment : Fragment() {
         val listView: TextView = binding.rulesText
         galleryViewModel.text.observe(viewLifecycleOwner) {
             listView.text = it.toString()
-            val button: Button = binding.button1
-            button.setOnClickListener{
-                listView.visibility= View.INVISIBLE
-            }
         }
 
         return root
