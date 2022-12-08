@@ -7,15 +7,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dota2.R
 import com.example.dota2.data.model.Responsibility
-import com.example.dota2.ui.aboutdota.AboutFragment
+import com.google.android.material.imageview.ShapeableImageView
 
-class ListAdapter(private val context: AboutFragment,
-                  private val dataset: List<Responsibility>
+class ListAdapter(private val context: ArrayList<Responsibility>
 ) : RecyclerView.Adapter<ListAdapter.ItemViewHolder>() {
 
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.item_title)
+        val resText: TextView = itemView.findViewById(R.id.tvHeading)
+        val Timage : ShapeableImageView = itemView.findViewById(R.id.title_image)
+        val doneby: TextView = itemView.findViewById(R.id.textView6)
+
 
 
 
@@ -27,11 +29,14 @@ class ListAdapter(private val context: AboutFragment,
         return ItemViewHolder(adapterLayout)
     }
 
-    override fun getItemCount() = dataset.size
+    override fun getItemCount() = context.size
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
-        holder.textView.text = context.resources.getString(item.stringResourceId)
+        val item = context[position]
+        holder.Timage.setImageResource(item.ImgResourceId)
+        holder.resText.text=item.Restext
+        holder.doneby.text=item.Doneby
+       /* holder.textView.text = context.resources.getString(item.stringResourceId)*/
 
     }
 }

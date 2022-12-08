@@ -1,6 +1,11 @@
 package com.example.dota2.data.model
 
-data class Responsibility(val stringResourceId: Int)
+import com.example.dota2.R
+
+data class Responsibility(val ImgResourceId: Int, var Restext:String, var Doneby:String){
+
+
+}
 
 
 

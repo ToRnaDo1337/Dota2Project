@@ -28,8 +28,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_list"
-            android:layout_width="359dp"
-            android:layout_height="456dp" />
+            android:layout_width="412dp"
+            android:layout_height="894dp"
+            tools:ignore="MissingConstraints"
+            tools:listitem="@layout/list_item" />
 
 
         <Button

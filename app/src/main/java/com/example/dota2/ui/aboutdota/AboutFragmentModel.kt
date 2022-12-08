@@ -1,16 +1,28 @@
 package com.example.dota2.ui.aboutdota
+import android.content.Context
+import android.provider.Settings.Global.getString
+import android.view.View
+import android.widget.TextView
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.recyclerview.widget.RecyclerView
+import com.example.dota2.R
+
+import com.example.dota2.adapter.ListAdapter
+import com.example.dota2.data.model.Responsibility
+import java.lang.reflect.TypeVariable
+
 
 class AboutFragmentModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "1";
-        value = "2";
-
-
+    private val _text = MutableLiveData<List<String>>().apply {
 
     }
-    val text: LiveData<String> = _text
+
+
+    val text: LiveData<List<String>> = _text
+
 }
+

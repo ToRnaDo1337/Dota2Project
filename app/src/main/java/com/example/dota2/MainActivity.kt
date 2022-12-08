@@ -25,6 +25,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import kotlinx.coroutines.*
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -102,6 +104,8 @@ class MainActivity : AppCompatActivity() {
 
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }
 
 
