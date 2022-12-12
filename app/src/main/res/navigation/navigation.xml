@@ -67,9 +67,12 @@
         <action
             android:id="@+id/action_gameWonFragment_to_mainMenu"
             app:destination="@id/mainMenu" />
+        <action
+            android:id="@+id/action_gameWonFragment_to_makoQuestion2"
+            app:destination="@id/makoQuestion" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment2"
-        android:name="com.example.dota2.ui.Settings.SettingsActivity.SettingsFragment"
+        android:name="com.example.dota2.ui.Settings.SettingsActivity$SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.accessibility.AccessibilityEventCompat.setAction
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -24,8 +25,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.*
-
+import org.json.JSONObject
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,29 +44,43 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarMain.toolbar)
 
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
-            val retrofit: Retrofit = Retrofit.Builder()
-                .baseUrl("https://api.opendota.com/")
-                .addConverterFactory(MoshiConverterFactory.create(moshi))
-                .build()
+            binding.appBarMain.fab.setOnClickListener { view ->
+                GlobalScope.launch {
+                val moshi = Moshi.Builder().addLast(KotlinJsonAdapterFactory()).build()
+                val retrofit: Retrofit = Retrofit.Builder()
+                    .baseUrl("https://api.opendota.com/")
+                    .addConverterFactory(MoshiConverterFactory.create(moshi))
+                    .build()
 
-            val dota2Presentation: Dota2Presentation = retrofit.create(Dota2Presentation::class.java)
+                val dota2Presentation: Dota2Presentation =
+                    retrofit.create(Dota2Presentation::class.java)
 
-            dota2Presentation.getCharacterById().enqueue(object: Callback<Any>{
-                override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                    Log.i("MainActivity", response.toString())
-                    Snackbar.make(view, "${response.body()}", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show()
+                dota2Presentation.getCharacterById().enqueue(object : Callback<List<DataModel>> {
+                    override fun onResponse(
+                        call: Call<List<DataModel>>,
+                        response: Response<List<DataModel>>
+                    ) {
 
-                }
+                        Log.i("MainActivity", response.toString())
+                        val listOfModels = response.body()
+                        if (listOfModels != null) {
+                            for ((index, model) in listOfModels.withIndex()) {
+                                if (model.localized_name.equals("Bristleback")) {
+                                    Snackbar.make(view, "Roles: " + "${model.roles}", Snackbar.LENGTH_LONG)
+                                        .setAction("Action", null).show()
+                                }
 
-                override fun onFailure(call: Call<Any>, t: Throwable) {
-                    Log.i("MainActivity", t.message ?: "Null Message")
-                }
-            })
+                            }
+                        }
+                    }
+
+                    override fun onFailure(call: Call<List<DataModel>>, t: Throwable) {
+                        Log.i("MainActivity", t.message ?: "Null Message")
+                    }
+                })
 
 
+            }
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView

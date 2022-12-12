@@ -19,13 +19,13 @@ class GameWonFragment : Fragment() {
                 inflater, R.layout.fragment_game_won, container, false)
 
         binding.nextMatchButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
+            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToMakoQuestion2())
         }
         binding.mainMenu.setOnClickListener { view: View ->
             view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToMainMenu())
         }
         val args = GameWonFragmentArgs.fromBundle(requireArguments())
-        Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Your Score: ${args.numCorrect} ", Toast.LENGTH_LONG).show()
 
         setHasOptionsMenu(true)
         return binding.root

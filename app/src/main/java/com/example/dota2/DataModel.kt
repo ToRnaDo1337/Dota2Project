@@ -1,46 +1,14 @@
 package com.example.dota2
 
-public class DataModel {
+import com.squareup.moshi.Json
 
-    private val  id = Int
-        get() { return field }
-    private val name = String
-        get() { return field }
-    private val localized_name = String
-        get() { return field }
-    private val primary_attr = String
-        get() { return field }
-    private var attack_type = String
-        get() { return field }
-    private val roles = listOf<String>()
-        get() { return field }
-    private val title = String
-        get() { return field }
+data class DataModel (
+    @field:Json(name = "id") var id: Int ,
+    @field:Json(name = "name") var name: String,
+    @field:Json(name = "localized_name") var localized_name: String,
+    @field:Json(name = "primary_attr") var primary_attr: String,
+    @field:Json(name = "attack_type") var attack_type: String,
+    @field:Json(name = "roles") var roles: List<String>,
 
 
-
-    public fun getId(int: Int): Int.Companion {
-        return id
-    }
-    public fun getName(string: String): String.Companion {
-        return name
-    }
-    public fun getLocalizedName(string: String): String.Companion {
-        return localized_name
-    }
-    public fun getRoles(list: List<String>): List<String> {
-        return roles
-    }
-    public fun getAttackType(string: String): String.Companion {
-        return attack_type
-    }
-
-    public fun getPrimaryAtt(string: String): String.Companion {
-        return primary_attr
-    }
-
-    public fun getTitle(string: String): String.Companion {
-        return title
-    }
-
-}
+)
